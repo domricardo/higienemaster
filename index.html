@@ -132,13 +132,71 @@
       font-size: 16px;
     }
 
+    .reviews-slider {
+      overflow: hidden;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+    }
+
+    .reviews-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .reviews-group {
+      display: flex;
+      gap: 20px;
+      flex: 0 0 100%;
+      justify-content: center;
+    }
+
+    .review-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .review-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+    }
+
+    .review-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #07bbe1;
+    }
+
+    .review-stars {
+      color: #ffcc00;
+      font-size: 14px;
+    }
+
+    .review-content {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+
     footer {
       width: 100%;
-      background-color: #005b5e;
+      background-color: #07bbe1;
       color: #fff;
       text-align: center;
       padding: 20px;
-      margin-top: 20px;
     }
 
     footer .cta {
@@ -207,15 +265,58 @@
     <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Veja como podemos transformar os seus estofados</button>
   </section>
 
-  <!-- Formulário -->
+  <!-- Avaliações -->
   <section>
-    <h2>Entre em Contato</h2>
-    <form>
-      <input type="text" id="nome" placeholder="Seu Nome" required>
-      <input type="email" id="email" placeholder="Seu Email" required>
-      <textarea id="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
-      <button class="cta" type="submit">Enviar Mensagem</button>
-    </form>
+    <h2>O que nossos clientes dizem</h2>
+    <div class="reviews-slider">
+      <div class="reviews-wrapper">
+        <div class="reviews-group">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar"></div>
+              <div>
+                <p class="review-name">Maria Silva</p>
+                <p class="review-stars">★★★★★</p>
+              </div>
+            </div>
+            <p class="review-content">"Pontual, o sofá e as 6 cadeiras ficaram muito limpos e cheirosos. Super recomendo!"</p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar"></div>
+              <div>
+                <p class="review-name">João Pereira</p>
+                <p class="review-stars">★★★★★</p>
+              </div>
+            </div>
+            <p class="review-content">"Ótimo trabalho e muito prestativo! Deixou meu sofá feito novo. Recomendo!"</p>
+          </div>
+        </div>
+        <div class="reviews-group">
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar"></div>
+              <div>
+                <p class="review-name">Carla Oliveira</p>
+                <p class="review-stars">★★★★★</p>
+              </div>
+            </div>
+            <p class="review-content">"Perfeito, muito capricho, fiquei muito satisfeita. Meu sofá está como novo!"</p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <div class="review-avatar"></div>
+              <div>
+                <p class="review-name">Eduardo Martins</p>
+                <p class="review-stars">★★★★★</p>
+              </div>
+            </div>
+            <p class="review-content">"Sensacional, muito bom trabalho. Gostei muito do atendimento, recomendo 100%!"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Confira o serviço que todos aprovam</button>
   </section>
 
   <!-- Rodapé -->
@@ -224,5 +325,30 @@
     <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Fale conosco agora</button>
     <p>© 2025 Higiene Master | Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    const slider = document.querySelector('.reviews-slider');
+    const wrapper = document.querySelector('.reviews-wrapper');
+    let currentIndex = 0;
+
+    function slideReviews() {
+      currentIndex++;
+      const groupWidth = document.querySelector('.reviews-group').offsetWidth;
+      wrapper.style.transform = `translateX(-${currentIndex * groupWidth}px)`;
+
+      // Reset to the first group when reaching the end
+      if (currentIndex >= wrapper.children.length) {
+        currentIndex = 0;
+        setTimeout(() => {
+          wrapper.style.transition = 'none';
+          wrapper.style.transform = 'translateX(0)';
+        }, 500); // Wait until the slide transition ends
+      } else {
+        wrapper.style.transition = 'transform 0.5s ease-in-out';
+      }
+    }
+
+    setInterval(slideReviews, 5000);
+  </script>
 </body>
 </html>
