@@ -14,20 +14,24 @@
       color: #333;
       text-align: center;
     }
+
     header {
       width: 100%;
       background-color: #005b5e;
       color: #fff;
       padding: 20px 0;
     }
+
     header h1 {
       margin: 0;
-      font-size: 28px;
+      font-size: 32px;
     }
+
     header p {
       margin: 5px 0 0;
-      font-size: 16px;
+      font-size: 18px;
     }
+
     section {
       width: 90%;
       max-width: 1200px;
@@ -37,27 +41,20 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
     h2 {
       color: #005b5e;
       margin-bottom: 15px;
       font-size: 24px;
     }
+
     p {
       margin-bottom: 10px;
       line-height: 1.6;
       font-size: 16px;
     }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 5px 0;
-      padding: 10px;
-      background: #e8f7f7;
-      border-radius: 5px;
-    }
-    button {
+
+    .cta {
       background-color: #008c8e;
       color: white;
       border: none;
@@ -66,10 +63,36 @@
       border-radius: 5px;
       cursor: pointer;
       margin-top: 15px;
+      display: inline-block;
     }
-    button:hover {
+
+    .cta:hover {
       background-color: #005b5e;
     }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .service-card {
+      width: 250px;
+      background: #e8f7f7;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      text-align: center;
+    }
+
+    .service-card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
     .slider {
       display: flex;
       overflow-x: auto;
@@ -77,18 +100,22 @@
       justify-content: center;
       padding: 10px 0;
     }
+
     .slider img {
       max-width: 300px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
+
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 15px;
     }
-    form input, form textarea {
+
+    form input,
+    form textarea {
       width: 90%;
       max-width: 500px;
       padding: 10px;
@@ -96,10 +123,12 @@
       border-radius: 5px;
       font-size: 16px;
     }
+
     form button {
       width: 90%;
       max-width: 200px;
     }
+
     footer {
       width: 100%;
       background-color: #005b5e;
@@ -125,7 +154,7 @@
       };
 
       emailjs
-        .send("service_wbmk4cs", "template_vsmzc4o", params)
+        .send("service_xeut4qo", "template_vsmzc4o", params)
         .then(
           (response) => {
             alert("Mensagem enviada com sucesso!");
@@ -148,7 +177,7 @@
   <section>
     <h2>Transforme seus Estofados Hoje!</h2>
     <p>Deixe sua casa ou carro impecável com nossos serviços especializados. Proteção, higiene e beleza em um só lugar!</p>
-    <button onclick="window.open('https://wa.me/5548991164405', '_blank')">Peça agora pelo WhatsApp</button>
+    <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Peça agora pelo WhatsApp</button>
   </section>
 
   <!-- Sobre Nós -->
@@ -160,23 +189,31 @@
   <!-- Serviços -->
   <section>
     <h2>Nossos Serviços</h2>
-    <ul>
-      <li>Impermeabilização</li>
-      <li>Higienização de Sofás</li>
-      <li>Higienização de Cadeiras</li>
-      <li>Higienização de Poltronas</li>
-      <li>Higienização de Puffs</li>
-      <li>Higienização de Colchões</li>
-      <li>Higienização de Tapetes</li>
-      <li>Limpeza de Carpetes</li>
-    </ul>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://via.placeholder.com/250x150" alt="Impermeabilização">
+        <h3>Impermeabilização</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://via.placeholder.com/250x150" alt="Higienização de Sofás">
+        <h3>Higienização de Sofás</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://via.placeholder.com/250x150" alt="Higienização de Colchões">
+        <h3>Higienização de Colchões</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://via.placeholder.com/250x150" alt="Higienização de Tapetes">
+        <h3>Higienização de Tapetes</h3>
+      </div>
+    </div>
   </section>
 
-  <!-- Benefícios -->
+  <!-- CTA Intermediária -->
   <section>
-    <h2>Benefícios da Impermeabilização</h2>
-    <p>Proteja seus estofados contra manchas e líquidos, prolongando sua durabilidade e mantendo a aparência de novo!</p>
-    <button onclick="window.open('https://wa.me/5548991164405', '_blank')">Saiba Mais</button>
+    <h2>Quer um Orçamento Rápido?</h2>
+    <p>Entre em contato agora mesmo e transforme seus estofados com a Higiene Master.</p>
+    <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Fale Conosco pelo WhatsApp</button>
   </section>
 
   <!-- Antes e Depois -->
@@ -198,14 +235,14 @@
       <input type="email" id="email" placeholder="Seu Email" required>
       <input type="tel" id="telefone" placeholder="Seu Telefone" required>
       <textarea id="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
-      <button type="submit">Enviar</button>
+      <button class="cta" type="submit">Enviar</button>
     </form>
   </section>
 
   <!-- Rodapé com CTA Final -->
   <footer>
     <h2>Pronto para Transformar Seus Estofados?</h2>
-    <button onclick="window.open('https://wa.me/5548991164405', '_blank')">Fale Conosco Agora!</button>
+    <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Fale Conosco Agora!</button>
     <p>© 2025 Higiene Master | Todos os direitos reservados.</p>
   </footer>
 </body>
