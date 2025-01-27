@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Higiene Master - Higienização e Impermeabilização de Estofados</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      width: 100%;
+      background-color: #005b5e;
+      color: #fff;
+      padding: 20px 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 16px;
+    }
+    section {
+      width: 90%;
+      max-width: 1200px;
+      padding: 20px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #005b5e;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 5px 0;
+      padding: 10px;
+      background: #e8f7f7;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #008c8e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background-color: #005b5e;
+    }
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    .slider img {
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    form input, form textarea {
+      width: 90%;
+      max-width: 500px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    form button {
+      width: 90%;
+      max-width: 200px;
+    }
+    footer {
+      width: 100%;
+      background-color: #005b5e;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("U59E1V6ZLnajqlKHe");
+    })();
+
+    function sendEmail(event) {
+      event.preventDefault();
+      const params = {
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        telefone: document.getElementById("telefone").value,
+        mensagem: document.getElementById("mensagem").value,
+      };
+
+      emailjs
+        .send("service_wbmk4cs", "template_vsmzc4o", params)
+        .then(
+          (response) => {
+            alert("Mensagem enviada com sucesso!");
+          },
+          (error) => {
+            alert("Erro ao enviar mensagem. Tente novamente.");
+          }
+        );
+    }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Higiene Master</h1>
+    <p>Cuidando dos seus estofados com excelência!</p>
+  </header>
+
+  <!-- Hero Section -->
+  <section>
+    <h2>Transforme seus Estofados Hoje!</h2>
+    <p>Deixe sua casa ou carro impecável com nossos serviços especializados. Proteção, higiene e beleza em um só lugar!</p>
+    <button onclick="window.open('https://wa.me/5548991164405', '_blank')">Peça agora pelo WhatsApp</button>
+  </section>
+
+  <!-- Sobre Nós -->
+  <section>
+    <h2>Sobre Nós</h2>
+    <p>A Higiene Master é referência em higienização de estofados em Florianópolis. Oferecemos serviços de alta qualidade, utilizando produtos certificados e técnicas modernas para garantir um ambiente mais saudável e limpo.</p>
+  </section>
+
+  <!-- Serviços -->
+  <section>
+    <h2>Nossos Serviços</h2>
+    <ul>
+      <li>Impermeabilização</li>
+      <li>Higienização de Sofás</li>
+      <li>Higienização de Cadeiras</li>
+      <li>Higienização de Poltronas</li>
+      <li>Higienização de Puffs</li>
+      <li>Higienização de Colchões</li>
+      <li>Higienização de Tapetes</li>
+      <li>Limpeza de Carpetes</li>
+    </ul>
+  </section>
+
+  <!-- Benefícios -->
+  <section>
+    <h2>Benefícios da Impermeabilização</h2>
+    <p>Proteja seus estofados contra manchas e líquidos, prolongando sua durabilidade e mantendo a aparência de novo!</p>
+    <button onclick="window.open('https://wa.me/5548991164405', '_blank')">Saiba Mais</button>
+  </section>
+
+  <!-- Antes e Depois -->
+  <section>
+    <h2>Antes e Depois</h2>
+    <div class="slider">
+      <img src="https://i.ibb.co/23xBQ2K" alt="Antes">
+      <img src="https://i.ibb.co/NZXt9rF" alt="Depois">
+      <img src="https://i.ibb.co/LSDQxq3" alt="Antes">
+      <img src="https://i.ibb.co/x3C1MvT" alt="Depois">
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section>
+    <h2>Entre em Contato</h2>
+    <form onsubmit="sendEmail(event)">
+      <input type="text" id="nome" placeholder="Seu Nome" required>
+      <input type="email" id="email" placeholder="Seu Email" required>
+      <input type="tel" id="telefone" placeholder="Seu Telefone" required>
+      <textarea id="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Rodapé com CTA Final -->
+  <footer>
+    <h2>Pronto para Transformar Seus Estofados?</h2>
+    <button onclick="window.open('https://wa.me/5548991164405', '_blank')">Fale Conosco Agora!</button>
+    <p>© 2025 Higiene Master | Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
