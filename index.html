@@ -285,34 +285,36 @@
   </section>
 
   <!-- Formulário de Contato -->
-  <section>
-    <h2>Entre em Contato com nossa equipe</h2>
-    <p>Preencha o formulário abaixo para tirar dúvidas ou solicitar um orçamento.</p>
-    <form id="contact-form">
-      <input type="text" name="user_name" placeholder="Seu Nome" required>
-      <input type="email" name="user_email" placeholder="Seu Email" required>
-      <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
-      <button class="cta" type="submit">Enviar Mensagem</button>
-    </form>
-  </section>
+<section>
+  <h2>Entre em Contato com nossa equipe</h2>
+  <p>Preencha o formulário abaixo para tirar dúvidas ou solicitar um orçamento.</p>
+  <form id="contact-form">
+    <input type="text" name="user_name" placeholder="Seu Nome" required>
+    <input type="email" name="user_email" placeholder="Seu Email" required>
+    <input type="tel" name="user_phone" placeholder="Seu Telefone/WhatsApp" required>
+    <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
+    <button class="cta" type="submit">Enviar Mensagem</button>
+  </form>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    (function () {
-      emailjs.init("U59E1V6ZLnajqlKHe");
-    })();
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("U59E1V6ZLnajqlKHe");
+  })();
 
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
-      event.preventDefault();
+  document.getElementById('contact-form').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-      emailjs.sendForm('service_xeut4qo', 'template_vsmzc4o', this)
-        .then(function () {
-          alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-        }, function (error) {
-          alert('Erro ao enviar mensagem. Por favor, tente novamente mais tarde.');
-        });
-    });
-  </script>
+    emailjs.sendForm('service_xeut4qo', 'template_vsmzc4o', this)
+      .then(function () {
+        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      }, function (error) {
+        alert('Erro ao enviar mensagem. Por favor, tente novamente mais tarde.');
+        console.error('Erro:', error);
+      });
+  });
+</script>
   
 <!-- Avaliações -->
 <section>
