@@ -405,54 +405,156 @@
       </div>
     </div>
   </div>
-  <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Confira o serviço que todos aprovam</button>
 </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <h2>Pronto para estofados impecáveis?</h2>
-    <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Fale conosco agora</button>
-    <p>Florianópolis - SC </p>
-    <p>© 2018 Higiene Master | Todos os direitos reservados.</p>
-     </footer>
+<!-- Estilos -->
+<style>
+  .reviews-slider {
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+  }
 
-  <!-- Scripts -->
-  <script>
-    const track = document.querySelector('.review-track');
-    let index = 0;
-    const totalSlides = document.querySelectorAll('.review-card').length / 2;
+  .reviews-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
 
-    function autoSlide() {
-      index++;
-      if (index >= totalSlides) index = 0;
-      const slideWidth = track.offsetWidth / 2;
-      track.style.transform = `translateX(-${index * slideWidth}px)`;
+  .reviews-group {
+    display: flex;
+    gap: 20px;
+    flex: 0 0 50%; /* Mostra 2 avaliações por vez no desktop */
+    justify-content: center;
+  }
+
+  .review-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-group {
+      flex: 0 0 100%; /* Mostra 1 avaliação por vez no celular */
     }
+  }
+</style>
 
-    setInterval(autoSlide, 5000);
-  </script>
-  
-  <script>
-  const wrapper = document.querySelector('.reviews-wrapper');
+<!-- Scripts -->
+<script>
+  const wrapper = document.querySelector(".reviews-wrapper");
   let currentIndex = 0;
 
   function slideReviews() {
+    const groupWidth = document.querySelector(".reviews-group").offsetWidth;
+
+    // Altera a posição do slide
     currentIndex++;
-    const groupWidth = document.querySelector('.reviews-group').offsetWidth;
     wrapper.style.transform = `translateX(-${currentIndex * groupWidth}px)`;
 
-    // Reinicia para o primeiro grupo ao chegar ao final
+    // Reinicia ao chegar no final
     if (currentIndex >= wrapper.children.length) {
       currentIndex = 0;
       setTimeout(() => {
-        wrapper.style.transition = 'none';
-        wrapper.style.transform = 'translateX(0)';
-      }, 500); // Aguarda até a transição do slide terminar
+        wrapper.style.transition = "none";
+        wrapper.style.transform = "translateX(0)";
+      }, 500); // Aguarda até a transição terminar antes de resetar
     } else {
-      wrapper.style.transition = 'transform 0.5s ease-in-out';
+      wrapper.style.transition = "transform 0.5s ease-in-out";
     }
   }
 
-  setInterval(slideReviews, 5000);
+  // Configura o intervalo de transição para 5 segundos
+  setInterval(slideReviews, 10000);
 </script>
-</body>
+
+
+<!-- Rodapé -->
+<footer>
+  <div class="footer-container">
+    <h2>Pronto para estofados impecáveis?</h2>
+    <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Fale conosco agora</button>
+    
+    <div class="contact-info">
+      <p><strong>Telefone:</strong> <a href="tel:+5548991164405">+55 (48) 99116-4405</a></p>
+      <p><strong>E-mail:</strong> <a href="mailto:higienemastersc@gmail.com">higienemastersc@gmail.com</a></p>
+    </div>
+    
+    <div class="social-media">
+      <a href="https://www.facebook.com/masterhigiene/" target="_blank">
+        <img src="https://i.imgur.com/bnFV3pf.png" alt="Facebook" width="30" height="30">
+      </a>
+      <a href="https://www.instagram.com/higienemastersc/" target="_blank">
+        <img src="https://i.imgur.com/US9F0Cj.png" alt="Instagram" width="30" height="30">
+      </a>
+    </div>
+    
+    <p>Florianópolis - SC</p>
+    <p>© 2018 Higiene Master | Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Estilos para o rodapé -->
+<style>
+  footer {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333; /* Mantendo o mesmo padrão de texto */
+  }
+
+  .footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cta:hover {
+    background-color: #0056b3;
+  }
+
+  .contact-info p {
+    margin: 10px 0;
+  }
+
+  .contact-info a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  .social-media {
+    margin: 15px 0;
+  }
+
+  .social-media a {
+    margin: 0 10px;
+    display: inline-block;
+  }
+
+  .social-media img {
+    vertical-align: middle;
+    border-radius: 50%; /* Deixa os ícones arredondados */
+  }
+
+  p {
+    margin: 5px 0;
+  }
+</style>
