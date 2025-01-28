@@ -322,16 +322,18 @@
     const phone = formData.get('user_phone');
     const message = formData.get('message');
 
-    const whatsappMessage = `Olá! Você recebeu uma nova mensagem:\n\n` +
+    const whatsappMessage = `Olá! Gostaria de solicitar um orçamento para os serviços da Higiene Master. Aqui estão as informações:\n\n` +
       `Nome: ${name}\n` +
       `Email: ${email}\n` +
-      `Telefone: ${phone}\n` +
-      `Mensagem: ${message}`;
+      `Telefone/WhatsApp: ${phone}\n` +
+      `Mensagem: ${message}\n\n` +
+      `Aguardo retorno para mais detalhes.`;
 
     const whatsappURL = `https://wa.me/5548991164405?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappURL, '_blank');
   });
 </script>
+
 
   
 <!-- Avaliações -->
