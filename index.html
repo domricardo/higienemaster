@@ -284,7 +284,7 @@
     <button class="cta" onclick="window.open('https://wa.me/5548991164405', '_blank')">Veja como podemos transformar os seus estofados</button>
   </section>
 
-  <!-- Formulário de Contato -->
+<!-- Formulário de Contato -->
 <section>
   <h2>Entre em Contato com nossa equipe</h2>
   <p>Preencha o formulário abaixo para tirar dúvidas ou solicitar um orçamento.</p>
@@ -306,15 +306,33 @@
   document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
+    // Envia os dados para o EmailJS
     emailjs.sendForm('service_xeut4qo', 'template_vsmzc4o', this)
       .then(function () {
-        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+        alert('Mensagem enviada com sucesso por email!');
       }, function (error) {
-        alert('Erro ao enviar mensagem. Por favor, tente novamente mais tarde.');
+        alert('Erro ao enviar por email. Por favor, tente novamente.');
         console.error('Erro:', error);
       });
+
+    // Envia os dados para o WhatsApp
+    const formData = new FormData(this);
+    const name = formData.get('user_name');
+    const email = formData.get('user_email');
+    const phone = formData.get('user_phone');
+    const message = formData.get('message');
+
+    const whatsappMessage = `Olá! Você recebeu uma nova mensagem:\n\n` +
+      `Nome: ${name}\n` +
+      `Email: ${email}\n` +
+      `Telefone: ${phone}\n` +
+      `Mensagem: ${message}`;
+
+    const whatsappURL = `https://wa.me/5548991164405?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, '_blank');
   });
 </script>
+
   
 <!-- Avaliações -->
 <section>
