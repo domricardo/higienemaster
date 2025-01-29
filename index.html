@@ -704,21 +704,25 @@
 
 <!-- Estilos para o rodapé -->
 <style>
-  footer {
+footer {
     padding: 20px;
     text-align: center;
     font-family: Arial, sans-serif;
     color: #333;
     width: 100%;
-    overflow-x: hidden; /* Impede a rolagem lateral */
-  }
+    max-width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
 
-  .footer-container {
-    max-width: 100%; /* Garante que não ultrapasse a tela */
+.footer-container {
+    max-width: 800px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 15px; /* Adiciona um padding para evitar que o conteúdo fique grudado na borda */
+    padding: 0 15px;
     box-sizing: border-box;
-  }
+}
 
   .cta {
     background-color: #007bff;
