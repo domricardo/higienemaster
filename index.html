@@ -708,12 +708,16 @@
     padding: 20px;
     text-align: center;
     font-family: Arial, sans-serif;
-    color: #333; /* Mantendo o mesmo padrão de texto */
+    color: #333;
+    width: 100%;
+    overflow-x: hidden; /* Impede a rolagem lateral */
   }
 
   .footer-container {
-    max-width: 800px;
+    max-width: 100%; /* Garante que não ultrapasse a tela */
     margin: 0 auto;
+    padding: 0 15px; /* Adiciona um padding para evitar que o conteúdo fique grudado na borda */
+    box-sizing: border-box;
   }
 
   .cta {
@@ -755,7 +759,7 @@
 
   .social-media img {
     vertical-align: middle;
-    border-radius: 50%; /* Deixa os ícones arredondados */
+    border-radius: 50%;
   }
 
   p {
