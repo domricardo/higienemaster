@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a Higiene Master para serviços especializados de higienização e impermeabilização de estofados. Atendimento personalizado e garantia de satisfação!">
     <title>Contato | Higiene Master</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -30,12 +31,12 @@
             width: 350px;
             height: auto;
             border-radius: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         h1 {
             color: #333;
             font-size: 26px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         p {
             color: #555;
@@ -50,7 +51,7 @@
         .btn {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             background: #007bff;
             color: white;
             text-decoration: none;
@@ -61,8 +62,13 @@
             font-weight: bold;
         }
         .btn i {
-            margin-right: 10px;
             font-size: 22px;
+        }
+        .btn .icon-left {
+            margin-right: 10px;
+        }
+        .btn .icon-right {
+            margin-left: 10px;
         }
         .btn:hover {
             transform: scale(1.05);
@@ -90,14 +96,22 @@
 <body>
     <div class="container">
         <img src="https://raw.githubusercontent.com/domricardo/higienemaster/main/logo.png" alt="Higiene Master" class="logo">
-        <h1>Higiene Master</h1>
+        <h1>HIGIENE MASTER</h1>
         <p>Especialistas em higienização e impermeabilização de estofados para residências e empresas.</p>
         
         <div class="buttons">
-            <a href="https://wa.me/48991164405" class="btn whatsapp"><i class="fab fa-whatsapp"></i> Fale Conosco</a>
-            <a href="https://www.instagram.com/higienemastersc" class="btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://www.facebook.com/masterhigiene" class="btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://www.higienemaster.com.br" class="btn site"><i class="fas fa-globe"></i> Visite Nosso Site</a>
+            <a href="https://wa.me/48991164405" class="btn whatsapp">
+                <i class="fab fa-whatsapp icon-left"></i> Fale Conosco <i class="fas fa-share icon-right"></i>
+            </a>
+            <a href="https://www.instagram.com/higienemastersc" class="btn instagram">
+                <i class="fab fa-instagram icon-left"></i> Instagram <i class="fas fa-share icon-right"></i>
+            </a>
+            <a href="https://www.facebook.com/masterhigiene" class="btn facebook">
+                <i class="fab fa-facebook-f icon-left"></i> Facebook <i class="fas fa-share icon-right"></i>
+            </a>
+            <a href="https://www.higienemaster.com.br" class="btn site">
+                <i class="fas fa-globe icon-left"></i> Visite Nosso Site <i class="fas fa-share icon-right"></i>
+            </a>
         </div>
 
         <footer>
