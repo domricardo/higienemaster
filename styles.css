@@ -21,9 +21,11 @@ body {
 }
 
 .logo {
-    width: 300px;
+    width: 200px; /* Ajuste conforme necessário */
+    height: auto;
     border-radius: 50%;
-    margin-bottom: 15px;
+    display: block;
+    margin: 0 auto 15px;
 }
 
 h1 {
