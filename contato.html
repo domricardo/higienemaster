@@ -8,39 +8,44 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #f4f4f4, #e0e0e0);
             text-align: center;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
             max-width: 600px;
-            margin: 50px auto;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
         }
         .logo {
-            width: 180px;
+            width: 350px;
             height: auto;
-            border-radius: 50%;
-            margin-bottom: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
         }
         h1 {
             color: #333;
-            font-size: 24px;
+            font-size: 26px;
+            margin-bottom: 10px;
         }
         p {
             color: #555;
-            font-size: 16px;
+            font-size: 18px;
+            margin-bottom: 20px;
         }
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
         }
         .btn {
             display: flex;
@@ -49,15 +54,18 @@
             background: #007bff;
             color: white;
             text-decoration: none;
-            font-size: 18px;
-            padding: 12px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-size: 20px;
+            padding: 14px;
+            border-radius: 8px;
+            transition: transform 0.2s, background 0.3s;
+            font-weight: bold;
         }
         .btn i {
-            margin-right: 8px;
+            margin-right: 10px;
+            font-size: 22px;
         }
         .btn:hover {
+            transform: scale(1.05);
             background: #0056b3;
         }
         .whatsapp { background: #25d366; }
@@ -72,6 +80,10 @@
             margin-top: 20px;
             font-size: 14px;
             color: #777;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
