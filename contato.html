@@ -5,18 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato | Higiene Master</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 180px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        p {
+            color: #555;
+            font-size: 16px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn i {
+            margin-right: 8px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .whatsapp { background: #25d366; }
+        .whatsapp:hover { background: #1da851; }
+        .instagram { background: #e4405f; }
+        .instagram:hover { background: #d81c3f; }
+        .facebook { background: #1877f2; }
+        .facebook:hover { background: #0d6ede; }
+        .site { background: #ff9800; }
+        .site:hover { background: #e68900; }
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-       <img src="https://raw.githubusercontent.com/domricardo/higienemaster/main/logo.png" alt="Higiene Master" class="logo">
+        <img src="https://raw.githubusercontent.com/domricardo/higienemaster/main/logo.png" alt="Higiene Master" class="logo">
         <h1>Higiene Master</h1>
         <p>Especialistas em higienização e impermeabilização de estofados para residências e empresas.</p>
         
         <div class="buttons">
-            <a href="https://wa.me/5548891164405" class="btn whatsapp">💬 WhatsApp</a>
-            <a href="https://www.instagram.com/higienemastersc" class="btn instagram">📷 Instagram</a>
-            <a href="https://www.facebook.com/masterhigiene" class="btn facebook">📘 Facebook</a>
-            <a href="https://www.higienemaster.com.br" class="btn site">🌎 Visite nosso site</a>
+            <a href="https://wa.me/5548891164405" class="btn whatsapp"><i class="fab fa-whatsapp"></i> Fale Conosco</a>
+            <a href="https://www.instagram.com/suaempresa" class="btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/masterhigiene" class="btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.higienemaster.com.br" class="btn site"><i class="fas fa-globe"></i> Visite Nosso Site</a>
         </div>
 
         <footer>
