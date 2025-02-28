@@ -237,19 +237,22 @@
       border-radius: 8px;
     }
 
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-      justify-content: center;
-      padding: 10px 0;
-    }
+ .slider {
+  display: flex;
+  overflow-x: auto; /* Permite rolagem horizontal */
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  gap: 10px; /* Espaço entre imagens */
+  max-width: 100%;
+}
 
-    .slider img {
-      max-width: 220px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+.slider img {
+  height: auto;
+  max-width: 100%;
+  object-fit: contain; /* Mantém a proporção sem cortar */
+  border-radius: 8px; /* Borda arredondada opcional */
+}
+
 
     form {
       display: flex;
