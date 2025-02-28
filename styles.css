@@ -28,7 +28,6 @@ body {
     margin: 0 auto 15px;
 }
 
-
 h1 {
     font-size: 24px;
     color: #333;
@@ -82,4 +81,69 @@ footer {
     margin-top: 20px;
     font-size: 12px;
     color: #999;
+}
+
+/* ================= SLIDER ANTES E DEPOIS ================= */
+
+.slider-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    gap: 10px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: none; /* Remove barra de rolagem no Firefox */
+    -ms-overflow-style: none; /* Remove barra de rolagem no IE e Edge */
+}
+
+.slider::-webkit-scrollbar {
+    display: none; /* Remove barra de rolagem no Chrome e Safari */
+}
+
+.slider img {
+    max-width: 220px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: -40px;
+}
+
+.next-btn {
+    right: -40px;
+}
+
+@media (max-width: 600px) {
+    .prev-btn {
+        left: 10px;
+    }
+    .next-btn {
+        right: 10px;
+    }
 }
