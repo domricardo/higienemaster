@@ -237,21 +237,24 @@
       border-radius: 8px;
     }
 
- .slider {
+.slider {
   display: flex;
   overflow-x: auto; /* Permite rolagem horizontal */
   scroll-behavior: smooth;
   white-space: nowrap;
   gap: 10px; /* Espaço entre imagens */
   max-width: 100%;
+  padding-bottom: 10px; /* Evita que a barra de rolagem fique muito visível */
 }
 
+/* Definir tamanho padrão para todas as imagens */
 .slider img {
-  height: auto;
-  max-width: 100%;
-  object-fit: contain; /* Mantém a proporção sem cortar */
-  border-radius: 8px; /* Borda arredondada opcional */
+  width: 200px; /* Defina um tamanho fixo para uniformizar */
+  height: 250px; /* Mesma altura para todas */
+  object-fit: cover; /* Faz as imagens preencherem sem distorcer */
+  border-radius: 8px; /* Borda arredondada */
 }
+
 
 
     form {
