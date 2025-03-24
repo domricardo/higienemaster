@@ -713,6 +713,66 @@
   <p>© 2017 Higiene Master | Todos os direitos reservados.</p>
   </div>
 </footer>
+    
+<!-- Botão flutuante de WhatsApp -->
+<a href="https://wa.me/5548991164405?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Higienização%20e%20Impermeabilização%20de%20estofados.%20Posso%20saber%20mais%20sobre%20esses%20serviços?" class="whatsapp-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="Ícone do WhatsApp">
+</a>
+
+<!-- Botão flutuante de chamada (somente mobile) -->
+<a href="tel:+5548991164405" class="call-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Ícone de telefone">
+</a>
+
+<style>
+  /* Estilizando os botões flutuantes */
+  .call-button, .whatsapp-button {
+    position: fixed;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    z-index: 9999;
+  }
+
+  /* Botão do WhatsApp - Aparece sempre */
+  .whatsapp-button {
+    bottom: 20px;
+    background-color: #25d366;
+  }
+
+  .whatsapp-button:hover {
+    background-color: #1ebe57;
+  }
+
+  /* Botão de Chamada - Somente no Mobile */
+  .call-button {
+    bottom: 90px; /* Acima do botão do WhatsApp */
+    background-color: #07bbe1;
+  }
+
+  .call-button:hover {
+    background-color: #0288d1;
+  }
+
+  /* Ajustando o tamanho dos ícones */
+  .call-button img, .whatsapp-button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Esconder o botão de chamada em telas maiores que 768px (desktop) */
+  @media (min-width: 768px) {
+    .call-button {
+      display: none;
+    }
+  }
 
 <!-- Estilos para o rodapé -->
 <style>
